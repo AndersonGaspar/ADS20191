@@ -13,7 +13,11 @@ int main()
 
     FILE *file = fopen("teste.csv", "w");
  
+<<<<<<< HEAD
     for (x=0;x<100;x++) {
+=======
+    for (x=0;x<23;x++) {
+>>>>>>> 49a1354bbb69895de785bc4f6075b5c37bf13708
     	if (fork()==0) {
     		struct timeval start, end; 
  
