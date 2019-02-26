@@ -11,13 +11,9 @@ int main()
     int x;
     double tempo_bloco; 
 
-    FILE *file = fopen("teste.csv", "w");
+    FILE *file = fopen("teste.csv", "a");
  
-<<<<<<< HEAD
     for (x=0;x<100;x++) {
-=======
-    for (x=0;x<23;x++) {
->>>>>>> 49a1354bbb69895de785bc4f6075b5c37bf13708
     	if (fork()==0) {
     		struct timeval start, end; 
  
@@ -31,13 +27,15 @@ int main()
     		tempo_bloco = (tempo_bloco + (end.tv_usec -  
                               start.tv_usec)) * 1e-6; 
  
-    		printf("Tempo = %lf\n", tempo_bloco);
+    		printf("Processo, %d, tempo, %lf\n", x, tempo_bloco);
 
     		fprintf(file, "Processo, %d, tempo, %lf\n", x, tempo_bloco);
+    		
 
     		return 0; 
     	}
     }
+    fprintf(file, "==============================\n");
     fclose(file);
  
 }
